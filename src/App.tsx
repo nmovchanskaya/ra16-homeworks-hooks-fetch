@@ -1,26 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
+import { TestStatus } from './components/TestStatus';
 import './App.css';
 
 function App() {
+
+  const urlOK = 'http://localhost:7070/data';
+  const urlError = 'http://localhost:7070/error';
+  const urlLoading = 'http://localhost:7070/loading';
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <TestStatus url={urlOK}/>
+      <TestStatus url={urlError}/>
+      <TestStatus url={urlLoading}/>
     </div>
-  );
+  )
 }
 
 export default App;
